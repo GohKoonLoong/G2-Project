@@ -163,7 +163,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tct44_NavigateToNewChequeRegistryPage() throws InterruptedException{
+    public void tc44_NavigateToNewChequeRegistryPage() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
