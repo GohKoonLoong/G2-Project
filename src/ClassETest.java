@@ -51,7 +51,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc41_EditActionIcon() throws InterruptedException {
+    public void FIMS_41() throws InterruptedException {
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -117,7 +117,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc42_SearchWithExistingRecord() throws InterruptedException{
+    public void FIMS_42() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -139,7 +139,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc43_SearchWithNonExistingRecord() throws InterruptedException{
+    public void FIMS_43() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -163,7 +163,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc44_NavigateToNewChequeRegistryPage() throws InterruptedException{
+    public void FIMS_44() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -181,7 +181,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc45_BackArrowNavigation() throws InterruptedException{
+    public void FIMS_45() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -203,7 +203,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc46_DatePicker() throws InterruptedException{
+    public void FIMS_46() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -243,7 +243,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc47_FormValidationDuringSaving() throws InterruptedException{
+    public void FIMS_47() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -273,7 +273,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc48_SaveWithCorrectInput() throws InterruptedException{
+    public void FIMS_48() throws InterruptedException{
         //Locate and click Cheque Registry Link
         WebElement chequeRegistryLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1652\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeRegistryLink)).click();
@@ -396,7 +396,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc49_ChequeReleaseButton() throws InterruptedException{
+    public void FIMS_49() throws InterruptedException{
         //Locate and click Cheque Release Link
         WebElement chequeReleaseLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1656\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeReleaseLink)).click();
@@ -426,7 +426,7 @@ public class ClassETest {
     }
 
     @Test
-    public void tc50_DownloadButton() throws InterruptedException{
+    public void FIMS_50() throws InterruptedException{
         //Locate and click Cheque List Link
         WebElement chequeListLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1720\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(chequeListLink)).click();
