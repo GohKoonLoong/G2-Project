@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.time.Duration;
+import java.util.Random;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClassETest {
@@ -288,9 +289,9 @@ public class ClassETest {
         WebElement typeDropdown = driver.findElement(By.xpath("//*[@id='inputArea_cheque_custType']/span"));
         typeDropdown.click();
 
-        // Locate and click the specific type option (e.g., student)
-        WebElement studentOption = driver.findElement(By.xpath("//*[@id=\"cheque_custType\"]/option[5]"));
-        wait.until(ExpectedConditions.elementToBeClickable(studentOption)).click();
+        // Locate and click the specific type option (e.g., student, debtor)
+        WebElement debtorOption = driver.findElement(By.xpath("//*[@id=\"cheque_custType\"]/option[5]"));
+        wait.until(ExpectedConditions.elementToBeClickable(debtorOption)).click();
 
         // Close the dropdown options
         WebElement dropdownOptions = driver.findElement(By.xpath("//*[@id=\"inputArea_cheque_custType\"]/span/span[2]/span"));
@@ -326,8 +327,15 @@ public class ClassETest {
         WebElement inputBranchName = driver.findElement(By.xpath("//*[@id=\"cheque_branchName\"]"));
         inputBranchName.sendKeys("Kuala Lumpur");
 
+        // Using Random class to generate a random number
+        Random random = new Random();
+        int randomNum = random.nextInt(1000000); // Change the range as needed
+
+        // Format the random number as a string and return
+        String formattedNum = String.format("%06d", randomNum); // 6-digit cheque number
+
         WebElement inputChequeID = driver.findElement(By.xpath("//*[@id=\"cheque_chequeNo\"]"));
-        inputChequeID.sendKeys("105008");
+        inputChequeID.sendKeys(formattedNum);
 
         // Locate and click the Cheque Date field
         WebElement chequeDate = driver.findElement(By.xpath("//*[@id=\"cheque_chequeDate\"]"));
@@ -350,14 +358,27 @@ public class ClassETest {
         WebElement chequeAmount = driver.findElement(By.xpath("//*[@id=\"cheque_chequeAmount\"]"));
         chequeAmount.sendKeys("1000");
 
+        String formattedNum2 = String.format("%06d", randomNum); // 6-digit reference number
+
         WebElement referenceNo = driver.findElement(By.xpath("//*[@id=\"cheque_invoiceNo\"]"));
-        referenceNo.sendKeys("123456");
+        referenceNo.sendKeys(formattedNum2);
 
         WebElement validity = driver.findElement(By.xpath("//*[@id=\"cheque_validity\"]"));
         validity.sendKeys("3");
 
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        // Using Random class to generate a random index from the characters string
+        StringBuilder randomString = new StringBuilder(8);
+
+        // Build the random string by selecting random characters from the characters string
+        for (int i = 0; i < 8; i++) {
+            int randomIndex = random.nextInt(characters.length());
+            randomString.append(characters.charAt(randomIndex));
+        }
+
         WebElement remark = driver.findElement(By.xpath("//*[@id=\"cheque_remark\"]"));
-        remark.sendKeys("MAY-10803");
+        remark.sendKeys(randomString.toString());
 
         // Locate and click the Received Date field
         WebElement receivedDate = driver.findElement(By.xpath("//*[@id=\"cheque_receiveDate\"]"));
