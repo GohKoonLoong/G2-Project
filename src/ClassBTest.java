@@ -32,6 +32,9 @@ public class ClassBTest {
 	    // Step 1: Open the FIMS_Clone login page
 	    driver.get("https://fimsclone.kerisi.my/login.php?a=NzM2NjI5");
         Thread.sleep(2000);
+
+		// Capture the current URL before clicking on the "Login" button
+        String currentUrlBeforeLogin = driver.getCurrentUrl();
 	    
 	    // Step 2: Enter the user name and password 
 	    driver.findElement(By.xpath("//*[@id=\"userID\"]")).sendKeys("ENTRY2");
@@ -44,7 +47,16 @@ public class ClassBTest {
 	    driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
         Thread.sleep(2000);
 		
-		// Step 4: Click on Account Receivable menu
+        // Step 4: Assert login functionality
+        //Capture the URL after clicking on the "Login" button
+        String currentUrlAfterLogin = driver.getCurrentUrl();
+        
+        //Assert that if URL not same, it mean the PDF file URL has been opened
+        Assert.assertNotEquals(currentUrlBeforeLogin, currentUrlAfterLogin,
+                "Users does not exist"); 
+        Thread.sleep(2000);  
+        
+		// Step 5: Click on Account Receivable menu
 		driver.findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/ul/li[4]/a")).click();	
         Thread.sleep(2000);
 	}
@@ -179,7 +191,7 @@ public class ClassBTest {
 	@Test
 	public void FIMS_16() throws InterruptedException
 	{
-		System.out.println("Test6 - Credit Note Form Page Link");
+		System.out.println("Test6 - Pagination button");
 	
 		//Click on credit note
 		WebElement creditNoteLink = driver.findElement(By.xpath("//*[@id=\"menu_id_1041\"]"));
@@ -275,7 +287,7 @@ public class ClassBTest {
 	public void FIMS_19() throws InterruptedException
 	{
 		System.out.println("Test9 - view button");
-	    //Capture the URL after clicking on the "Download" button
+	    //Capture the URL after clicking on the "View" button
 	    String currentUrlBeforeView = driver.getCurrentUrl();
 	    
 		//Click on credit note
@@ -290,7 +302,7 @@ public class ClassBTest {
         //Capture the URL after clicking on the "view" button
         String currentUrlAfterView = driver.getCurrentUrl();
         
-        //Assert that if URL not same, it mean the PDF file URL has been opened
+        //Assert that if URL not same, it mean the navigation to view page success
         Assert.assertNotEquals(currentUrlBeforeView, currentUrlAfterView,
                 "Navigation to Credit Note Form not successfull");
         Thread.sleep(8000);
@@ -339,8 +351,13 @@ public class ClassBTest {
 	    Thread.sleep(4000);
 	    	    
 	    //Click on "Save" button.
-	    driver.findElement(By.xpath("/html/body/div[4]/form/div/div[7]/div/div/button[2]")).click();
+	    WebElement saveButton = driver.findElement(By.xpath("/html/body/div[4]/form/div/div[7]/div/div/button[2]"));
+	    saveButton.click();
 	    Thread.sleep(4000);
+	    
+	    //Assert that the specific save button is click able
+	    Assert.assertTrue("Save button is not clickable", saveButton.isEnabled());
+	    Thread.sleep(5000); 
 	  
 	}
 
