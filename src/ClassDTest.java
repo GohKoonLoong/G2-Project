@@ -85,11 +85,11 @@ public class ClassDTest {
 	@Test
 	public void FIMS_32()  throws InterruptedException{
 		//Locate and click receipt Link
-        WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
-        wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
+      //  WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
+      //  wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
         
 		//wait 2 second
-        Thread.sleep(2000);
+      //  Thread.sleep(2000);
         
       //enter to list of receipt
         WebElement receiptListLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1590\"]"));
@@ -193,11 +193,11 @@ public class ClassDTest {
     public void FIMS_35() throws InterruptedException {
     	String currentURLBeforePrint=driver.getCurrentUrl();
         // Locate and click the receipt Link
-        WebElement receiptLink = driver.findElement(By.xpath("//*[@id='list_menu_id_1044']"));
-        wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
+       // WebElement receiptLink = driver.findElement(By.xpath("//*[@id='list_menu_id_1044']"));
+     //   wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
 
         // Wait for 2 seconds
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
 
         // Locate and click the list of receipt Link
         WebElement receiptListLink = driver.findElement(By.xpath("//*[@id='list_menu_id_1590']"));
@@ -228,11 +228,11 @@ public class ClassDTest {
         String currentURLBeforeDownload = driver.getCurrentUrl();
 		
 		 //Locate and click receipt  Link
-	   WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
-	   wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
+	 //  WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
+	 //  wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
 	   
        //wait 2 second
-	 Thread.sleep(5000);
+	// Thread.sleep(5000);
 		 
         //Locate and click list of receipt Link
         WebElement receiptListLink =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"list_menu_id_1590\"]")));
@@ -268,7 +268,7 @@ public class ClassDTest {
 		WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1590\"]"));
         wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
 
-        Thread.sleep(3000);
+       Thread.sleep(3000);
 
         // Locate the next Page Button and click on it
         WebElement nextPageButton = driver.findElement(By.xpath("//*[@id=\"dt_listing_next\"]/a"));
@@ -316,8 +316,8 @@ public class ClassDTest {
 	 @Test
 	  public void FIMS_39() throws InterruptedException{
 	        //Locate and click receipt Registry Link
-	      WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
-	      wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
+	     WebElement receiptLink = driver.findElement(By.xpath("//*[@id=\"list_menu_id_1044\"]"));
+	     wait.until(ExpectedConditions.elementToBeClickable(receiptLink)).click();
 
 	        Thread.sleep(3000);
 
@@ -350,7 +350,7 @@ public class ClassDTest {
         wait.until(ExpectedConditions.elementToBeClickable(receiptBadDebtLink)).click();
         
 		//wait 2 second
-        Thread.sleep(5000);
+       Thread.sleep(5000);
 
         // Locate the view Icon Button and click on it
         WebElement viewIconButton = driver.findElement(By.xpath("/html/body/div[4]/form/div/div[1]/div[2]/div[4]/table/tbody/tr[1]/td[11]/a[2]"));
